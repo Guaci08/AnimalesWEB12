@@ -1,0 +1,160 @@
+/* estilos generales del proyecto */
+:root {
+    --bg: #f4f3ef;
+    --surface: #ffffff;
+    --text: #2d2a26;
+    --muted: #6f6b64;
+    --accent: #7a9f35;
+    --accent-dark: #5f7a29;
+    --border: rgba(45, 42, 38, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body {
+    min-height: 100vh;
+}
+
+body.hippo-page {
+    background-image: url('hippo-bg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background: linear-gradient(135deg, #e8f0d9 0%, #f4f3ef 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 22px;
+}
+
+.site-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 12px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.main-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+main {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 20px 40px;
+}
+
+.hero {
+    background: var(--surface);
+    padding: 30px 26px;
+    border-radius: 18px;
+    box-shadow: 0 18px 36px rgba(45, 42, 38, 0.06);
+    border: 1px solid var(--border);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 30px rgba(45, 42, 38, 0.08);
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--accent-dark);
+    font-size: clamp(2rem, 2.4vw, 3rem);
+}
+
+.hero p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.info-grid {
+    display: grid;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.card {
+    background: var(--surface);
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 24px rgba(45, 42, 38, 0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--accent-dark);
+}
+
+.card p {
+    margin: 0;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.details {
+    margin-top: 28px;
+    display: grid;
+    gap: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 18px 20px 28px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@media(min-width: 720px) {
+    .info-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 520px) {
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
